@@ -33,6 +33,7 @@
     [OnlyLocationManager shareManager:NO needVO:YES initCallBack:^(LocationInitType type, CLLocationManager *manager) {
         
     } resultCallBack:^(CLLocationCoordinate2D coordinate, CLLocation *location, OnlyLocationVO *locationVO) {
+        sender.enabled = YES;
         [self locationSuccess:locationVO];
     }];
 }
@@ -66,6 +67,8 @@
             stateStr = @"已定位，逆地理编码失败";
             break;
     }
+    
+    NSLog(@"%@",stateStr);
     self.title = stateStr;
 }
 

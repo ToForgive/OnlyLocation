@@ -72,25 +72,22 @@
         _geocoder=[[CLGeocoder alloc]init];
     }
     
-    if (!inited) {
-        if ([CLLocationManager locationServicesEnabled]) {
-            if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
-                [_locationManager requestWhenInUseAuthorization];
-            }else if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
-                if (self.initCallBack) {
-                    self.initCallBack(2,nil);
-                }
-            }else{
-                [self fillLocationManager];
-            }
-        }else
-        {
+    if ([CLLocationManager locationServicesEnabled]) {
+        if ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusNotDetermined){
+            [_locationManager requestWhenInUseAuthorization];
+        }else if([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied){
             if (self.initCallBack) {
-                self.initCallBack(1,nil);
+                self.initCallBack(2,nil);
             }
+        }else{
+            [self fillLocationManager];
+        }
+    }else
+    {
+        if (self.initCallBack) {
+            self.initCallBack(1,nil);
         }
     }
-    [_locationManager startUpdatingLocation];
 }
 
 -(void)fillLocationManager{
@@ -102,6 +99,7 @@
         self.initCallBack(0,_locationManager);
     }
     self.state = InLocalization;
+    [_locationManager startUpdatingLocation];
 }
 
 +(OnlyLocationVO *)getOldLocation

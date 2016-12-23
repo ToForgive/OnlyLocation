@@ -40,13 +40,16 @@
     NSURLSession *session = [NSURLSession sharedSession];
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
-        if (error == nil) {
-            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
-            completionHandler(dict,nil);
-        }else
-        {
-            completionHandler(nil,error);
-        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (error == nil) {
+                NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+                completionHandler(dict,nil);
+            }else
+            {
+                completionHandler(nil,error);
+            }
+        });
+        
     }];
     
     [dataTask resume];
