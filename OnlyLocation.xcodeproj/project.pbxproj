@@ -15,6 +15,7 @@
 		945EED0E1E0BC58100F13A58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 945EED0C1E0BC58100F13A58 /* LaunchScreen.storyboard */; };
 		945EED181E0BC61700F13A58 /* OnlyLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 945EED171E0BC61700F13A58 /* OnlyLocationManager.m */; };
 		945EED1B1E0BC67B00F13A58 /* OnlyLocationVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 945EED1A1E0BC67B00F13A58 /* OnlyLocationVO.m */; };
+		9493C60B1E0CB28200D99A2B /* NetAndUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9493C60A1E0CB28200D99A2B /* NetAndUDManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		945EED171E0BC61700F13A58 /* OnlyLocationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyLocationManager.m; sourceTree = "<group>"; };
 		945EED191E0BC67B00F13A58 /* OnlyLocationVO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OnlyLocationVO.h; sourceTree = "<group>"; };
 		945EED1A1E0BC67B00F13A58 /* OnlyLocationVO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OnlyLocationVO.m; sourceTree = "<group>"; };
+		9493C6091E0CB28200D99A2B /* NetAndUDManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetAndUDManager.h; sourceTree = "<group>"; };
+		9493C60A1E0CB28200D99A2B /* NetAndUDManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetAndUDManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 		945EED151E0BC60A00F13A58 /* OnlyLocationManager */ = {
 			isa = PBXGroup;
 			children = (
+				9493C6091E0CB28200D99A2B /* NetAndUDManager.h */,
+				9493C60A1E0CB28200D99A2B /* NetAndUDManager.m */,
 				945EED161E0BC61700F13A58 /* OnlyLocationManager.h */,
 				945EED171E0BC61700F13A58 /* OnlyLocationManager.m */,
 				945EED191E0BC67B00F13A58 /* OnlyLocationVO.h */,
@@ -169,6 +174,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9493C60B1E0CB28200D99A2B /* NetAndUDManager.m in Sources */,
 				945EED061E0BC58100F13A58 /* ViewController.m in Sources */,
 				945EED031E0BC58100F13A58 /* AppDelegate.m in Sources */,
 				945EED181E0BC61700F13A58 /* OnlyLocationManager.m in Sources */,
@@ -293,6 +299,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6W54S9FEJ;
 				INFOPLIST_FILE = OnlyLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ST.MEDIA.OnlyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -305,6 +312,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B6W54S9FEJ;
 				INFOPLIST_FILE = OnlyLocation/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ST.MEDIA.OnlyLocation;
 				PRODUCT_NAME = "$(TARGET_NAME)";
