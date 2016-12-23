@@ -46,6 +46,7 @@ typedef void (^ResultCallBack)(CLLocationCoordinate2D coordinate,CLLocation *loc
 
 @property LocationState state;
 
++(instancetype)getLocationManager;
 +(instancetype)shareManager:(BOOL)always needVO:(BOOL)needVO initCallBack:(InitResultCallBack)initCallBack resultCallBack:(ResultCallBack)resultCallBack;
 +(OnlyLocationVO *)getOldLocation;
 +(void)getLocation:(ResultCallBack)resultCallBack;
