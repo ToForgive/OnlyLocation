@@ -90,6 +90,7 @@
             }
         }
     }
+    [_locationManager startUpdatingLocation];
 }
 
 -(void)fillLocationManager{
@@ -101,7 +102,6 @@
         self.initCallBack(0,_locationManager);
     }
     self.state = InLocalization;
-    [_locationManager startUpdatingLocation];
 }
 
 +(OnlyLocationVO *)getOldLocation
