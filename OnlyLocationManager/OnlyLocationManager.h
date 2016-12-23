@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "OnlyLocationVO.h"
 
+//设置反地理编码ak
+#define GEOCODINGAK @"a31UK8dZVT2OoGuOi3DqU1GL"
 #define LocationStateNoti @"LocationStateNoti"
 
 typedef NS_ENUM(NSInteger, LocationInitType) {

@@ -7,7 +7,7 @@
 //
 
 #import "OnlyLocationManager.h"
-#define GEOCODING @"https://api.map.baidu.com/geocoder/v2/?ak=a31UK8dZVT2OoGuOi3DqU1GL&location=%f,%f&output=json"
+#define GEOCODING @"https://api.map.baidu.com/geocoder/v2/?ak=%@&location=%f,%f&output=json"
 
 @interface OnlyLocationManager ()<CLLocationManagerDelegate>
 {
@@ -121,8 +121,15 @@
     }else
     {
         self.state = LocatedNOVO;
-        [self getAddress:self.resultCallBack];
-        [_locationManager stopUpdatingLocation];
+        if (self.needVO) {
+            [self getAddress:self.resultCallBack];
+            [_locationManager stopUpdatingLocation];
+        }else
+        {
+            if (self.resultCallBack) {
+                self.resultCallBack(_coordinate,_location,nil);
+            }
+        }
     }
 }
 
@@ -141,7 +148,7 @@
 #pragma mark 根据坐标取得地名
 -(void)getAddress:(ResultCallBack)resultCallBack{
     //反地理编码
-    NSString* url=[NSString stringWithFormat:GEOCODING,_coordinate.latitude,_coordinate.longitude];
+    NSString* url=[NSString stringWithFormat:GEOCODING,GEOCODINGAK,_coordinate.latitude,_coordinate.longitude];
     [NetAndUDManager getWith:url completionHandler:^(NSDictionary *data, NSError *error) {
         NSLog(@"%@",data);
         if (error) {

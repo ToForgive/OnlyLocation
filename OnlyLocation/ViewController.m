@@ -28,6 +28,7 @@
         [self locationSuccess:locationVO];
     }];
 }
+
 - (IBAction)updateLocation:(UIButton *)sender {
     sender.enabled = NO;
     [OnlyLocationManager shareManager:NO needVO:YES initCallBack:^(LocationInitType type, CLLocationManager *manager) {
